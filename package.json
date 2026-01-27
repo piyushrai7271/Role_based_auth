@@ -1,0 +1,17 @@
+{
+  "name": "role_based_authentication",
+  "version": "1.0.0",
+  "description": "A role based authentication system",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "dev":"nodemon index.js"
+  },
+  "keywords": [],
+  "author": "piyush rai",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
