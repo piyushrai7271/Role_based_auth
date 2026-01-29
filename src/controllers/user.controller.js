@@ -153,7 +153,7 @@ const changePassword = asyncHandler(async(req,res)=>{
   // user is comming from middleware req.user and validate it
   const userId = req.user._id;
 
-  const user = await User.findById(userId);
+  const user = await User.findById(userId).select("+password");;
   if(!user){
     throw new ApiError(401,"Unauthorize: user is missing");
   }
