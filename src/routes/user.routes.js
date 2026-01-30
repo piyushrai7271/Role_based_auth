@@ -11,6 +11,7 @@ import {
   updateUserDetails,
   deleteUser,
   getUser,
+  refreshAccessToken,
   getAllUser,
 } from "../controllers/user.controller.js";
 const router = express.Router();
@@ -26,6 +27,7 @@ router.put("/update-avatar",jwtValidation,upload.single("avatar"),updateAvatar);
 router.put("/update-user-details",jwtValidation,updateUserDetails);
 router.delete("/delete-user/:id",jwtValidation,authorizeRoles("admin"),deleteUser);
 router.get("/getuser",jwtValidation,authRateLimiter,getUser);
+router.post("/refresh-access-token",refreshAccessToken);
 router.get("/get-all-user",jwtValidation,authRateLimiter,authorizeRoles("admin"),getAllUser);
 
 export default router;
